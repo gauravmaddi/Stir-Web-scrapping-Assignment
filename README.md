@@ -91,17 +91,17 @@ This project is a web application that fetches and displays Twitter trends using
 
 ## Authenticate Your IP From This Section 
 
-![alt text](./img/image-11.png)
+![alt text](./img/auth.png)
 ---
 ## Take IP From Here 
 
-![alt text](./img/image-3.png)
+![alt text](./img/ip.png)
 ---
 ## Take Port Number From Here 
 
-![alt text](./img/Screenshot%202025-01-05%20193546.png)
+![alt text](./img/port.png)
 ---
 
 ## IMG Of UI
-![alt text](./img/image.png)
+![alt text](./img/ui.png)
 ---
