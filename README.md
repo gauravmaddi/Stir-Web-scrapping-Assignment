@@ -101,3 +101,7 @@ This project is a web application that fetches and displays Twitter trends using
 
 ![alt text](./img/Screenshot%202025-01-05%20193546.png)
 ---
+
+## IMG Of UI
+![alt text](./img/image.png)
+---

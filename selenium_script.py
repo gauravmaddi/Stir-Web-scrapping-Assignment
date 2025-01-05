@@ -16,7 +16,7 @@ def fetch_trends(proxy_ip_port):
 
     # Configure Chrome Options
     options = webdriver.ChromeOptions()
-    options.add_argument(f'--proxy-server=http://{proxy_ip_port}')
+    # options.add_argument(f'--proxy-server=http://{proxy_ip_port}')
     options.add_argument('--disable-blink-features=AutomationControlled')
 
     # Initialize WebDriver
