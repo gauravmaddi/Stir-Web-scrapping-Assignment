@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Trends</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #0077b6;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            display: block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #005f86;
+        }
+        #results {
+            margin-top: 20px;
+        }
+        ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        p {
+            margin: 10px 0;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Twitter Trends</h1>
+    </header>
+    <main>
+        <button onclick="runScript()">Click here to run the script</button>
+        <div id="results">
+            <p>Click the button above to see the latest Twitter trends.</p>
+        </div>
+    </main>
+    <script>
+        async function runScript() {
+            const response = await fetch('http://127.0.0.1:5000/run-script');
+            const data = await response.json();
+            const resultsDiv = document.getElementById('results');
+            
+            if (data.error) {
+                resultsDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
+                return;
+            }
+            
+            resultsDiv.innerHTML = `
+                <p>These are the most happening topics as on <strong>${data.date_time}</strong>:</p>
+                <ul>
+                    <li>${data.nameoftrend1}</li>
+                    <li>${data.nameoftrend2}</li>
+                    <li>${data.nameoftrend3}</li>
+                    <li>${data.nameoftrend4}</li>
+                </ul>
+                <p>The IP address used for this query was <strong>${data.ip_address}</strong>.</p>
+                <p>Here's a JSON extract of this record from the MongoDB:</p>
+                <pre>${JSON.stringify(data, null, 2)}</pre>
+            `;
+        }
+    </script>
+</body>
+</html>
