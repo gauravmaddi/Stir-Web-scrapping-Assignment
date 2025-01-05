@@ -67,7 +67,7 @@ This project is a web application that fetches and displays Twitter trends using
    http://127.0.0.1:5000/
    ```
 
-4. To fetch trends, hit the `/run-script` endpoint:
+4. To fetch the trends, hit the `/run-script` endpoint:
    ```
    http://127.0.0.1:5000/run-script
    ```
