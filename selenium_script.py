@@ -32,7 +32,7 @@ def fetch_trends(proxy_ip_port):
         # Navigate to the Login Page
         driver.get("https://x.com/i/flow/login")
         
-        time.sleep(10)
+        time.sleep(2)
         
         # Explicit wait for the username field
         wait = WebDriverWait(driver, 15)

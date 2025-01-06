@@ -105,3 +105,7 @@ This project is a web application that fetches and displays Twitter trends using
 ## IMG Of UI
 ![alt text](./img/ui.png)
 ---
+
+## Comment This Line " options.add_argument(f'--proxy-server=http://{proxy_ip_port}')" If You Want To Run On Your Own ip
+![alt text](./img/comment.png)
+---
