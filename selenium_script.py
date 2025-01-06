@@ -16,7 +16,8 @@ def fetch_trends(proxy_ip_port):
 
     # Configure Chrome Options
     options = webdriver.ChromeOptions()
-    # options.add_argument(f'--proxy-server=http://{proxy_ip_port}')
+    # Comment this below line to run on your own ip
+    options.add_argument(f'--proxy-server=http://{proxy_ip_port}')
     options.add_argument('--disable-blink-features=AutomationControlled')
 
     # Initialize WebDriver
@@ -30,6 +31,8 @@ def fetch_trends(proxy_ip_port):
 
         # Navigate to the Login Page
         driver.get("https://x.com/i/flow/login")
+        
+        time.sleep(10)
         
         # Explicit wait for the username field
         wait = WebDriverWait(driver, 15)
